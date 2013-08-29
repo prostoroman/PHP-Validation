@@ -21,7 +21,7 @@ class AlphaNumeric implements \HybridLogic\Validation\Rule, \HybridLogic\Validat
 	 **/
 	public function validate($field, $value, $validator) {
 		if(empty($value)) return true;
-		return ctype_alnum($value);
+		return preg_match('/^\pL+$/u', $value);
 	} // end func: validate
 
 
